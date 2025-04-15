@@ -10,5 +10,16 @@ function acessar(){
     else{
         window.location.href = "cadastro.html";
     }
-
+}
+//criando variável do tipo array
+var dadosLista = [];
+function salvarUser(){
+ let nomeUser = document.getElementById('nomeUser').value;
+ if(nomeUser){
+    //metodo para colocar o valor dentro do array 
+    dadosLista.push(nomeUser); 
+    console.log(dadosLista);
+    //apagar o nome do campo input
+    document.getElementById("nomeUser").value = "";
+ }
 }
