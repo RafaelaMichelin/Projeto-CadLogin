@@ -32,7 +32,7 @@ function salvarUser(){
 function criaLista(){
     let tabela = "<tr><td>Nome</td><th>Ações</td></tr>";
     for(let i = 0; i<= (dadosLista.length-1);i++){
-        tabela += "<tr><td>" + dadosLista[i] + "</td><td><button>Editar</button><button>Excluir</button></td></tr>"; //sinal de + para concatenar
+        tabela += "<tr><td>" + dadosLista[i] + "</td><td><button class='btn btn-warning'>Editar</button><button class='btn btn-danger'>Excluir</button></td></tr>"; //sinal de + para concatenar
         document.getElementById('tabela').innerHTML = tabela;          
     }
 }
