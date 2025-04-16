@@ -13,13 +13,26 @@ function acessar(){
 }
 //criando variável do tipo array
 var dadosLista = [];
+//função para salvar usuario
 function salvarUser(){
  let nomeUser = document.getElementById('nomeUser').value;
  if(nomeUser){
     //metodo para colocar o valor dentro do array 
     dadosLista.push(nomeUser); 
+    
     console.log(dadosLista);
+    criaLista();
     //apagar o nome do campo input
     document.getElementById("nomeUser").value = "";
+ } else{
+    alert("Favor informar um nome para cadastro");
  }
+}
+//Função para preencher a lista de cadastro
+function criaLista(){
+    let tabela = "<tr><td>Nome</td><th>Ações</td></tr>";
+    for(let i = 0; i<= (dadosLista.length-1);i++){
+        tabela += "<tr><td>" + dadosLista[i] + "</td><td><button>Editar</button><button>Excluir</button></td></tr>"; //sinal de + para concatenar
+        document.getElementById('tabela').innerHTML = tabela;          
+    }
 }
