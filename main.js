@@ -32,7 +32,13 @@ function salvarUser(){
 function criaLista(){
     let tabela = "<tr><td>Nome</td><th>Ações</td></tr>";
     for(let i = 0; i<= (dadosLista.length-1);i++){
-        tabela += "<tr><td>" + dadosLista[i] + "</td><td><button class='btn btn-warning'>Editar</button><button class='btn btn-danger'>Excluir</button></td></tr>"; //sinal de + para concatenar
+        tabela += "<tr><td>" + dadosLista[i] + "</td><td><button class='btn btn-warning'onclick=''>Editar</button><button class='btn btn-danger' onclick='excluir(this.parentNode.parentNode.rowIndex)'>Excluir</button></td></tr>"; //sinal de + para concatenar
         document.getElementById('tabela').innerHTML = tabela;          
     }
+}
+//Função para excluir nome da lista
+function excluir(i){  //parâmetro i
+dadosLista.splice((i-1), 1);   //método da array para excluir ou editar
+document.getElementById('tabela').deleteRow(i);
+console.log(i);
 }
